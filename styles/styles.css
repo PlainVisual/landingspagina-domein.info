@@ -1,49 +1,310 @@
-/*////////////////////////////////////////////////////////////////////////
-Table of Contents:
-    1. Global Styles
-    2. Typografie
-    3. Areas
-        3.1 Header
-        3.2 Testimonial
-        3.3 Support
-        3.4 Faq
-        3.5 Footer
-////////////////////////////////////////////////////////////////////////*/
+/* -- Fonts -- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,700;0,900;1,100;1,200;1,300;1,700;1,900&display=swap');
+
+/* -- Global styles - Variables -- */
+:root {
+
+--ff-fontfamily: 'Poppins', sans-serif;
+--ff-fontweight-thin: 100;
+--ff-fontweight-exLight: 200;
+--ff-fontweight-light: 300;
+--ff-fontweight-medium: 500;
+--ff-fontweight-bold: 700;
+--ff-fontweight-black: 900;
+
+--ff-fontsize-h1: calc(1rem + 10vw);
+--ff-fontsize-h2: 2rem;
+--ff-fontsize-p: 0.75rem;
+
+--primary-clr-darkgreen:hsl(199, 28%, 15%);
+--accent-clr-grey:hsl(190, 11%, 58%);
+
+--layout-wrapper-size: 960px;
+--layout-wrapper-padding-lr: 0px 20px;
+--layout-padding: 70px 0px 0px 0px;
+
+--animation-transition:all 0.35s ease-in-out;
+
+}
+
+/* -- CSS RESET -- */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+* {
+margin: 0px;
+padding: 0px;
+}
+
+body {
+line-height: 1.5;
+font-family: var(--ff-fontfamily);
+font-weight: var(--ff-fontweight-light);
+color: var(--primary-clr-darkgreen);
+-webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    
+  }
+
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
 
 
+/* -- TYPOGRAPHY -- */
+a {
+  color: var(--accent-clr-grey);
+  font-weight: var(--ff-fontweight-bold);
+  transition: var(--animation-transition);
+  text-decoration: none;
+}
 
-/*////////////////////////
-    1. Global Styles
-////////////////////////*/
+/* -- LAYOUT STYLING -- */
+.wrapper-sections {
+    margin: 0 auto;  
+    max-width: var(--layout-wrapper-size);
+    padding: var(--layout-wrapper-padding-lr); 
+}
+
+/* -- HEADER MAIN -- */
+
+.header-main {
+    max-width: 100%;
+    padding: 50px 0px 350px 0px;
+    background-image: url("../assets/images/mountains.jpg");
+    background-position: top -240px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.header__content {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header__content h1 {
+  font-size: var(--ff-fontsize-h1);
+}
+
+.header__content p {
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+
+/* -- FORM STYLING -- */
+
+.header__content form {
+  font-size: 0rem;
+}
+
+.header__content input {
+  font-weight: var(--ff-fontweight-medium);
+  font-size: 1rem;
+  padding: 25px 35px 25px 35px;
+  border:none;
+  outline: none;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-clr-darkgreen);
+}
+
+/* -- FORM STYLING - INPUTFIELD -- */
+
+.header__content input[type=url] {
+  font-weight: var(--ff-fontweight-light);
+  width:25%;
+  border-radius: 40px 0px 0px 40px;
+  background-color: rgba(255, 255, 255, 0.0);
+  transition: var(--animation-transition);
+}
+
+.header__content input[type=url]:hover, :focus {
+  outline: none;
+  background-color: #ffff;
+}
+
+.header__content input::placeholder {
+  color:var(--primary-clr-darkgreen);
+  font-weight: var(--ff-fontweight-light);
+}
+
+/* -- FORM STYLING - SBMIT -- */
+
+.header__content input[type=submit] {
+  background-color: var(--primary-clr-darkgreen);
+  color: #ffff;
+  border-radius: 0 40px 40px 0;
+  border-left-style: none;
+  cursor: pointer;
+  transition: var(--animation-transition);
+}
+
+.header__content input[type=submit]:hover {
+  background-color: #ffff;
+  color: var(--primary-clr-darkgreen);
+}
+
+/* -- SECTION TESTIMONIALS -- */
+
+.testimonials {
+  padding: var(--layout-padding);
+}
+
+.testimonials h2 {
+  font-size: var(--ff-fontsize-h2);
+  text-align: center;
+}
+
+.testimonial__customer:first-of-type {
+  margin-top: 65px;
+  margin-bottom:65px;
+}
+
+.testimonial__customer {
+  padding: 65px 100px;
+  background-color: #fff;
+  box-shadow: 0px 5px 35px rgba(0,0,0,0.18);
+
+ }
+
+ .customer__info {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  font-style: italic;
+ }
+
+ .testimonial__customer .quote {
+  position: relative;
+ }
+
+ .testimonial__customer .quote::before {
+  content: url(../assets/icons/quote-left.png);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -10px;
+  left:-50px;
+}
+
+ .customer__info img {
+  width: 44px;
+  height:44px;
+  border-radius: 50%;
+  margin-right: 30px;
+ }
+
+/* -- SECTION SERVICE-DESK -- */
+
+.service-desk {
+  padding: var(--layout-padding);
+  font-size: 14px;
+}
+
+.service-desk h2 {
+  font-size: var(--ff-fontsize-h2);
+  text-align: center;
+}
+
+.service-desk__img {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+.service-desk p {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.service-desk .link-hover {
+  border-width: 2px;
+  border-bottom: solid;
+  border-color: var(--accent-clr-grey);
+  transition: var(--animation-transition);
+}
+
+.service-desk .link-hover:hover, a:hover {
+  color:var(--primary-clr-darkgreen);
+  border-color: var(--primary-clr-darkgreen);
+}
+
+.service-desk button {
+  color: #FFF;
+  cursor: pointer;
+  padding: 20px 35px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-clr-darkgreen);
+  border-radius: 35px;
+  font-weight: var(--ff-fontweight-medium);
+  background-color: var(--primary-clr-darkgreen);
+  transition: var(--animation-transition);
+}
+
+.service-desk button:hover {
+  color: var(--primary-clr-darkgreen);
+  background-color: #FFF;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-clr-darkgreen);
+}
+
+/* -- SECTION QUESTIONS -- */
+
+.questions {
+  padding: var(--layout-padding);
+  padding-bottom: 50px;
+}
+
+.questions h2 {
+  font-size: var(--ff-fontsize-h2);
+  margin-bottom: 55px;
+  text-align: center;
+}
+
+.questions details {
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.questions details > summary {
+  background-color: rgba(0,0,0,0.0);
+}
+
+.questions details > p {
+  margin-top: 20px;
+  padding: 30px 35px;
+  border-radius: 10px;
+  font-weight: var(--ff-fontweight-medium);
+  color: #FFF;
+  background-color: var(--primary-clr-darkgreen);
+  box-shadow: 0px 5px 35px rgba(0,0,0,0.18);
+  
+}
+
+.questions details[open] {
+  padding: 20px;
+  border-radius: 10px;
+  color: #FFF;
+  font-weight: var(--ff-fontweight-medium);
+  background-color: var(--accent-clr-grey);
+  overflow: hidden;
+}
 
 
+/* -- SECTION FOOTER -- */
 
-/*////////////////////////
-    2. Typography
-////////////////////////*/
-
-
-
-/*////////////////////////
-    3. Areas
-////////////////////////*/
-
-
-
-/*///////////// 3.1 Header /////////////*/
-
-
-
-/*///////////// 3.2 Testimonial /////////////*/
-
-
-
-/*///////////// 3.3 Support /////////////*/
-
-
-
-/*///////////// 3.4 Faq /////////////*/
-
-
-
-/*///////////// 3.5 Footer /////////////*/
+footer {
+  padding:30px 0px;
+  text-align: center;
+  font-size: 14px;
+  color:#FFF;
+  background-color: var(--primary-clr-darkgreen);
+}
