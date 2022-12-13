@@ -94,7 +94,7 @@ a {
 
 .header__content p {
   font-size: 18px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 /* -- FORM STYLING -- */
@@ -106,7 +106,7 @@ a {
 .header__content input {
   font-weight: var(--ff-fontweight-medium);
   font-size: 1rem;
-  padding: 25px 35px 25px 35px;
+  padding: 20px 35px 20px 35px;
   border:none;
   outline: none;
   border-width: 2px;
@@ -118,7 +118,7 @@ a {
 
 .header__content input[type=url] {
   font-weight: var(--ff-fontweight-light);
-  width:25%;
+  width:30%;
   border-radius: 40px 0px 0px 40px;
   background-color: rgba(255, 255, 255, 0.0);
   transition: var(--animation-transition);
